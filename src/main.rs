@@ -2,14 +2,14 @@ use clap::Parser;
 
 #[derive(Parser)]
 struct TestStcuc {
-    TestString: String,
+    test_string: String,
 }
 
 fn main() {
     let args = TestStcuc::parse();
 
-    if args.TestString == "testString" {
+    if args.test_string == "testString" {
         println!("this works");
     }
-    println!("Hello, world! {}", args.TestString);
+    println!("Hello, world! {}", args.test_string);
 }
