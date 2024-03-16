@@ -1,9 +1,21 @@
 [package]
-name = "xtest"
-version = "0.1.0"
+name = "rustclitest"
+version = "0.1.1"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 clap = { version = "4.5.1", features = ["derive"] }
+
+[package.metadata.deb]
+maintainer = "Devin Little <pixlovesit@gmail.com>"
+copyright = "2017, Michael Aaron Murphy <mmstickman@gmail.com>"
+license-file = ["LICENSE", "4"]
+extended-description = "Test Project for packaging a rust cli app"
+depends = "$auto"
+section = "utility"
+priority = "optional"
+assets = [
+    ["target/release/rustclitest", "usr/bin/", "755"],
+]
